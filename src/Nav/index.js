@@ -2,7 +2,6 @@ import { Link } from "@reach/router"
 import { useLocation } from "@reach/router"
 
 import classNames from 'classnames/bind';
-import styles from './styles.module.css'; 
 
 export const Nav = ({props}) => {
   const location = useLocation();
@@ -10,13 +9,22 @@ export const Nav = ({props}) => {
 
   return (<ul className="nav nav-pills ">
     <li className="nav-item">
-      <Link className={classNames('nav-link', {'active': path === '/queue' })} aria-current="queue" to="queue">Queue</Link>
+      <Link className={classNames('nav-link', {'active': path === '/' })} to="/">Dashboard</Link>
     </li>
     <li className="nav-item">
-      <Link className={classNames('nav-link', {'active': path === '/printers' })} aria-current="printers" to="printers">Printers</Link>
+      <Link className={classNames('nav-link', {'active': path === '/queue' })} to="queue">Queue</Link>
     </li>
     <li className="nav-item">
-      <Link className={classNames('nav-link', {'active': path === '/filament' })} aria-current="filament" to="filament">Filament</Link>
+      <Link className={classNames('nav-link', {'active': path === '/history' })} to="history">History</Link>
+    </li>
+    <li className="nav-item">
+      <Link className={classNames('nav-link', {'active': path === '/models' })} to="models">Models</Link>
+    </li>
+    <li className="nav-item">
+      <Link className={classNames('nav-link', {'active': path === '/printers' })} to="printers">Printers</Link>
+    </li>
+    <li className="nav-item">
+      <Link className={classNames('nav-link', {'active': path === '/filament' })} to="filament">Filament</Link>
     </li>
   </ul>);
 }
